@@ -15,6 +15,5 @@ async function scrapeProduct(url) {
     browser.close()
 }
 
-const prompt = require("prompt-sync")({ sigint: true })
-let link = prompt("IPInfo.io Link: ")
-scrapeProduct(`${link}`)
+const args = process.argv.slice(2)
+scrapeProduct('https://ipinfo.io/' + `${args[0]}`)
